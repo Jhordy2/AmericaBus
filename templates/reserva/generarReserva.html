@@ -9,7 +9,16 @@
                         <div class="card-body">
                             <form action="/asientos" method="POST">
                                 <div class="row">
-                                    
+                                    <div class="col-sm-4">
+                                        <input type="hidden" name="id_usuario" value="{{ session['user'].id_usuario }}">
+
+                                        <input type="hidden" name="id_destino" value="{{ data[0].id_destino }}">
+
+                                        <label for="">Origen - Destino</label>
+                                        <input class="form-control" type="text" id="Origen_viaje"
+                                               value="{{ data[0].titulo }}" disabled>
+                                    </div>
+
                                     <div class="col-sm-4">
                                         <label for="">Fecha de Viaje</label>
                                         <input class="form-control" type="input" value="{{ data[0].fecha_viaje }}"
@@ -34,14 +43,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <label for="" style="color: transparent;">Seleccionar Asiento</label>
-                                        <button  type="submit" id="btn_SeleccionarAsientos"
-                                           class="btn btn-info text-white" >
-                                            <i class="fas fa-chair"></i> Seleccionar Asientos</button>
-                                    </div>
-                                </div>
+                                
                             </form>
                         </div>
                     </div>
